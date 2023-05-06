@@ -55,13 +55,13 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                 rounded-full 
                 cursor-pointer 
                 hover:shadow-md 
-                transition
+                transition      
                 '
             >
                 <AiOutlineMenu/>
+             <div className='hidden md:block'>
+                <Avatar  src = {currentUser?.image}/>
             </div>
-            <div className='hidden md:block'>
-                <Avatar/>
             </div>
         </div>
         {
