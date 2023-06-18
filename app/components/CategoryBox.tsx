@@ -26,11 +26,17 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({icon: Icon , label, selected})
         if(params?.get('category') == label){
             delete updatedQuery.category
         }
-        //2.57
-    }, [])
+        const url = qs.stringifyUrl({
+            url: '/',
+            query: updatedQuery
+        }, {skipNull:true})
+
+        router.push(url)
+    }, [label, params, router])
 
     return ( 
         <div
+        onClick={handleClick}
         className={`
         flex 
         flex-col 
