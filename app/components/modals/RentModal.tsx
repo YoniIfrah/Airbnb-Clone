@@ -54,6 +54,7 @@ function RentModal() {
     }
 
     const onBack = () =>{
+      console.log('!!!!')
         setStep((value) => value -1)
     }
     const onNext = () =>{
@@ -103,13 +104,19 @@ function RentModal() {
         </div>
       )
 
+  if (step === STEPS.LOCATION){
+    bodyContent = (
+      <div>Location Step !</div>
+    )
+  }
+  console.log(step)
 
   return (
     <Modal 
      title="Airbnb your home"
      isOpen={rentModal.isOpen}
      onClose={rentModal.onClose}
-     onSubmit={rentModal.onClose}
+     onSubmit={onNext}
      actionLabel={actionLabel}
      secondaryActionLabel={secondaryActionLabel}
      secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
