@@ -1,7 +1,5 @@
+import Loader from "./components/Loader";
 
-
-export default function loading() {
-  return (
-    <div>loading please wait</div>
-  )
+export default function Loading() {
+    return <Loader />;
 }
